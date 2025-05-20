@@ -17,7 +17,7 @@ AVG(
   END
 )
 
-3. LAte Delivery :
+3. Late Delivery :
 AVG(
   CASE 
     WHEN "_APX_WDCRP_CASES"."DELIVERED_DATE" > "_APX_WDCRP_CASES"."PROMISED_DATE" 
