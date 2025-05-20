@@ -16,3 +16,12 @@ AVG(
     ELSE 0.0 
   END
 )
+
+3. LAte Delivery :
+AVG(
+  CASE 
+    WHEN "_APX_WDCRP_CASES"."DELIVERED_DATE" > "_APX_WDCRP_CASES"."PROMISED_DATE" 
+    THEN 1.0 
+    ELSE 0.0 
+  END
+)
