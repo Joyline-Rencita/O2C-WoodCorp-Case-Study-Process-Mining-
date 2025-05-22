@@ -54,3 +54,18 @@ AVG(
     ELSE 0.0
   END
 )
+
+8. Loss Ratio :
+(
+  AVG(
+    CASE 
+      WHEN "_APX_WDCRP_CASES"."DELIVERED_DATE" > "_APX_WDCRP_CASES"."PROMISED_DATE"
+      THEN "_APX_WDCRP_CASES"."DELIVERED_QUANTITY" * 0.75
+      ELSE 0
+    END
+  )
+  /
+  AVG("_APX_WDCRP_CASES"."ORDER_VALUE")
+)
+
+9. 
