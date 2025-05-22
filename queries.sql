@@ -39,3 +39,18 @@ SUM(
   END
 )
 
+6.  Deadline conformance:
+AVG(
+  CASE
+    WHEN "_APX_WDCRP_CASES"."DELIVERED_DATE" <= "_APX_WDCRP_CASES"."PROMISED_DATE" THEN 1.0
+    ELSE 0.0
+  END
+)
+
+7. Volume Conformance :
+AVG(
+  CASE
+    WHEN "_APX_WDCRP_CASES"."ORDERED_QUANTITY" <= "_APX_WDCRP_CASES"."DELIVERED_QUANTITY" THEN 1.0
+    ELSE 0.0
+  END
+)
