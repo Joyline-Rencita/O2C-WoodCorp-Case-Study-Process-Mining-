@@ -68,4 +68,5 @@ AVG(
   AVG("_APX_WDCRP_CASES"."ORDER_VALUE")
 )
 
-9. 
+9. Non Automation :
+AVG(CASE WHEN "_APX_WDCRP_CASES"."WAREHOUSE_TYPE" = 'Non-automated' THEN 1.0 ELSE 0.0 END)
