@@ -153,3 +153,18 @@ SUM(
 
 21. Unique Customers
 COUNT(DISTINCT "_APX_WDCRP_CASES"."CUST_NAME")
+
+22. Avg time to ship goods:
+AVG (
+  CALC_THROUGHPUT (
+    FIRST_OCCURRENCE [ 'Load shipment' ]
+    TO
+    LAST_OCCURRENCE [ 'Goods delivered' ] ,
+    REMAP_TIMESTAMPS (
+      "_APX_WDCRP_ACTIVITIES"."EVENTTIME" ,
+      MINUTES
+    )
+  )
+  /
+  60
+)
