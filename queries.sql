@@ -140,5 +140,8 @@ SUM(
   END
 )
 
-18.  Delivered Qty:
+18. Ordered Qty:
+  SUM("_APX_WDCRP_CASES"."ORDERED_QUANTITY")
+  
+19.  Delivered Qty:
   SUM("_APX_WDCRP_CASES"."DELIVERED_QUANTITY")
