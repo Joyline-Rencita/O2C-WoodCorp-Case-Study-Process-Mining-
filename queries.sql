@@ -129,3 +129,15 @@ It computes:
 → = the estimated value of the quantity not delivered
 
 Then it sums up these values across all such cases.
+
+
+17. 
+SUM(
+  CASE 
+    WHEN "_APX_WDCRP_CASES"."DELIVERED_QUANTITY" < "_APX_WDCRP_CASES"."ORDERED_QUANTITY" 
+    THEN "_APX_WDCRP_CASES"."ORDERED_QUANTITY" - "_APX_WDCRP_CASES"."DELIVERED_QUANTITY"
+    ELSE 0 
+  END
+)
+
+18. 
