@@ -110,5 +110,22 @@ AVG(
   END
 )
 
-16. 
+16.  Lost Value Due to Partial Fulfillment
+SUM(
+  CASE 
+    WHEN "_APX_WDCRP_CASES"."DELIVERED_QUANTITY" < "_APX_WDCRP_CASES"."ORDERED_QUANTITY"
+    THEN ("_APX_WDCRP_CASES"."ORDERED_QUANTITY" - "_APX_WDCRP_CASES"."DELIVERED_QUANTITY") * "_APX_WDCRP_CASES"."UNIT_PRICE"
+    ELSE 0 
+  END
+)
+It calculates the total monetary value of under-delivered quantities.
 
+In other words:
+
+For every order where less was delivered than ordered,
+
+It computes:
+→ (Ordered – Delivered) × Unit Price
+→ = the estimated value of the quantity not delivered
+
+Then it sums up these values across all such cases.
