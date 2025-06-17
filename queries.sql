@@ -93,3 +93,22 @@ CONCAT(
 
 13. Net Order Value:
 SUM("_APX_WDCRP_CASES"."ORDER_VALUE")
+
+14. This calculates the average order value for all orders where delivered quantity > ordered quantity
+AVG(
+  CASE
+    WHEN "_APX_WDCRP_CASES"."ORDERED_QUANTITY" < "_APX_WDCRP_CASES"."DELIVERED_QUANTITY" THEN "_APX_WDCRP_CASES"."ORDER_VALUE"
+    ELSE 0.0
+  END
+)
+
+15. If you want average order value of only over-delivered orders
+AVG(
+  CASE
+    WHEN "_APX_WDCRP_CASES"."ORDERED_QUANTITY" > "_APX_WDCRP_CASES"."DELIVERED_QUANTITY" THEN "_APX_WDCRP_CASES"."ORDER_VALUE"
+    ELSE 0.0
+  END
+)
+
+16. 
+
