@@ -164,7 +164,5 @@ AVG (
       "_APX_WDCRP_ACTIVITIES"."EVENTTIME" ,
       MINUTES
     )
-  )
-  /
-  60
+  )  /   60
 )
